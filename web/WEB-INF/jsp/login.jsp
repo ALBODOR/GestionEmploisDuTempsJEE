@@ -22,7 +22,7 @@
             <br />
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <center><h1>S'authentifier</h1></center>
+                    <center><h3>Authentification</h3></center>
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="login" >
@@ -31,7 +31,7 @@
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-user" style="width: auto"></i>
                             </span>
-                            <input id="txtUsuario" runat="server" type="text" class="form-control" name="username" placeholder="Votre login" required="" />
+                            <input id="username" type="text" class="form-control" name="username" placeholder="Votre login" required="" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -39,30 +39,23 @@
                             <span class="input-group-addon">
                                 <i class="glyphicon glyphicon-lock" style="width: auto"></i>
                             </span>
-                            <input id="txtSenha" runat="server" type="password" class="form-control" name="password" placeholder="Vote mot de passe" required="" />
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Vote mot de passe" required="" />
                         </div>
                     </div>
-                    <button id="btnLogin" runat="server" class="btn btn-default" style="width: 100%">
-                        ENTRAR<i class="glyphicon glyphicon-log-in"></i>
-                    </button>
+                        
+                    <div class="form-group">
+                        <button id="btnLogin" runat="server" class="btn btn-primary" style="width: 100%">
+                            SE CONNECTER <i class="glyphicon glyphicon-log-in"></i>
+                        </button>
+                    </div>
+                    <center>mot de passe oublié? <a href="/GestionEmploisDuTempsJEE/recoverPassword">Cliquez ici</a></center>
                     </form>
                 </div>
             </div>
         </div>
         
-        <div class="container">
-            <div class="row">
-                <hr>
-                <div class="col-lg-12">
-                    <div class="col-md-8">
-                        <a href="#">Terms of Service</a> | <a href="#">Privacy</a>    
-                    </div>
-                    <div class="col-md-4">
-                        <p class="muted pull-right">© 2013 Company Name. All rights reserved</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- FOOTER -->
+        <jsp:include page="static/footer.jspx" />
     </body>
 </html>
 

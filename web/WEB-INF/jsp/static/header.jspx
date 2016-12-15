@@ -1,0 +1,51 @@
+<!-- Header File -->
+<html xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">GestionEmploisDuTemps</a>
+          </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="admin">Home</a></li>                    
+                <!-- Professeurs -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="prof/">Professeurs
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/GestionEmploisDuTempsJEE/prof/list">Consulter</a></li>
+                      <li><a href="/GestionEmploisDuTempsJEE/prof/add">Ajouter nouveau</a></li>
+                    </ul>
+                </li>
+                <!-- Salles -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="salles/">Salles
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/GestionEmploisDuTempsJEE/salles/list">Voir liste</a></li>
+                      <li><a href="/GestionEmploisDuTempsJEE/salles/add">Nouvelle salle</a></li>
+                    </ul>
+                </li>
+                <!-- Modules -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="salles/">Modules
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/GestionEmploisDuTempsJEE/mod/list">Liste des modules</a></li>
+                      <li><a href="/GestionEmploisDuTempsJEE/mod/add">Nouveau module</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/GestionEmploisDuTempsJEE/admin">
+                    <span class="glyphicon glyphicon-user"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/GestionEmploisDuTempsJEE/changepasswd">Changer mot de passe</a></li>
+                      <li><a href="/GestionEmploisDuTempsJEE/logout">Se déconnecter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</html>

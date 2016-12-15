@@ -7,9 +7,11 @@ public interface ProfesseursManager {
     
     boolean save(Professeur p);
     
+    boolean modify(Professeur p);
+    
     void delete(String cin);
     
-    Professeur find(long id);
+    Professeur find(String cin);
     
     List<Professeur> findAll();
     

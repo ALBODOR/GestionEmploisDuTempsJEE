@@ -43,8 +43,12 @@ public class ProfesseursManagerImpl implements ProfesseursManager {
     }
 
     @Override
-    public Professeur find(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Professeur find(String cin) {
+        for(Professeur p:repository) {
+            if(p.getCin().equals(cin))
+                return p;
+        }
+        return null;
     }
 
     @Override
@@ -55,6 +59,22 @@ public class ProfesseursManagerImpl implements ProfesseursManager {
     @Override
     public int cout() {
         return this.repository.size();
+    }
+
+    @Override
+    public boolean modify(Professeur p) {
+        // Removing Old Professeur
+        Professeur oldProf = find(p.getCin());
+        repository.remove(oldProf);
+        // Making Modifications
+        oldProf.setNom(p.getNom());
+        oldProf.setPrenom(p.getPrenom());
+        oldProf.setEmail(p.getEmail());
+        oldProf.setTelephone(p.getTelephone());
+        oldProf.setDepartement(p.getDepartement());
+        // Saving the new One
+        repository.add(p);
+        return true;
     }
 
 }

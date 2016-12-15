@@ -15,11 +15,14 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <!-- HEADER -->
+        <jsp:include page="../static/header.jspx" />        
+        
+        <!-- CONTENT -->
         <div class="container">
-            <h1>Liste des Professeurs</h1>
+            <h3>Liste des Professeurs</h3>
             <table class="table table-striped custab">
                 <thead>
-                    <a href="add" class="btn btn-primary btn-xs pull-right"><b>+</b> Nouveau Professeur</a>
                     <tr>
                         <th>CIN</th>
                         <th>Nom</th>
@@ -39,17 +42,26 @@
                     <td>${prof.getTelephone()}</td>
                     <td>${prof.getDepartement().toString()}</td>
                     <td class="text-center">
-                        <a class='btn btn-info btn-xs' href="#">
-                            <span class="glyphicon glyphicon-edit"></span> Modifier
-                        </a>
-                        <a href="del?id=${prof.getCin()}" class="btn btn-danger btn-xs">
-                            <span class="glyphicon glyphicon-remove">
-                            </span> Supprimer
-                        </a>
+                        <form method="GET" action="modify" style="display: inline;">
+                            <input type="hidden" name="cin" value="${prof.getCin()}" />
+                            <button type="submit" class="btn btn-success btn-xs">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                        </form>
+                        <form method="POST" action="del" style="display: inline;">
+                            <input type="hidden" name="cin" value="${prof.getCin()}" />
+                            <button type="submit"class="btn btn-danger btn-xs">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 </c:forEach>
             </table>
+            <a href="add" class="btn btn-primary btn-xs pull-left"><b>+</b> Nouveau Professeur</a>
         </div>
+        
+        <!-- FOOTER -->
+        <jsp:include page="../static/footer.jspx" />
     </body>
 </html>

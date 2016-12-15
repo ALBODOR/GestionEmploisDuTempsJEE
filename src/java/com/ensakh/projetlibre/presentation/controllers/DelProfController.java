@@ -15,36 +15,28 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "delProfServlet", urlPatterns = "/prof/del")
 public class DelProfController extends HttpServlet{
+
     @Inject
-    ProfesseursManager manager;
-
-    private void processRequest(HttpServletRequest req, HttpServletResponse resp) 
-            throws ServletException, IOException {
-        // POST Params
-        String id = req.getParameter("id");
-        
-        PrintWriter out = resp.getWriter();
-        out.println("<html><head><title></title></head><body>");
-        try{
-            // Deleting selected Item ID
-            manager.delete(id);
-            out.println("<p>Professeur deleted successfully!</p>");
-         
-        } catch(NullPointerException npe) {            
-            out.println("<p>Invalid URL param ID !</p>");
-        }
-        out.println("</body></html>");    
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
-    
+    ProfesseursManager manager;    
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
-    
+        // POST Params
+        String cin = req.getParameter("cin");
+        
+        // Preparing Output
+        PrintWriter out = resp.getWriter();
+        out.println("<html><head><title></title></head><body>");
+        
+        try{
+            // Deleting selected Item ID
+            manager.delete(cin);
+            // Redirecting Back to List
+            resp.sendRedirect("/GestionEmploisDuTempsJEE/prof/list");
+        } catch(NullPointerException npe) {            
+            out.println("<p>Invalid ID!</p>");
+            out.println("</body></html>");    
+            out.close();
+        }
+    }    
 }
