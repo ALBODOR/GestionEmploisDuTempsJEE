@@ -72,14 +72,15 @@
                         </div>
                         
                         <div class="form-group">
-                            <button id="btnLogin" type="submit" class="btn btn-primary" style="width: 100%">
+                            <button type="submit" class="btn btn-primary" style="width: 100%">
                                 ENREGISTRER
                             </button>
                         </div>
                         
                         <div class="form-group">
-                            <button id="btnLogin" type="reset" class="btn btn-default" style="width: 100%">
-                            ANNULER
+                            <button href="/GestionEmploisDuTempsJEE/prof/list" 
+                                    class="btn btn-default" style="width: 100%">
+                                ANNULER
                             </button>
                         </div>
                     </form>

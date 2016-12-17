@@ -1,4 +1,4 @@
-package com.ensakh.projetlibre.presentation.controllers;
+package com.ensakh.projetlibre.presentation.controllers.prof;
 
 import com.ensakh.projetlibre.metier.Departement;
 import com.ensakh.projetlibre.metier.Professeur;
@@ -76,8 +76,8 @@ public class ModifyProfController extends HttpServlet{
             out.println("<html><body>");
             // Persisting Prof
             if(manager.modify(prof)) {
-                out.println("<h1>Professeur était bien modifié!</h1>");
-                System.out.println(getClass().getSimpleName()+" : GOOD");
+                resp.sendRedirect("/GestionEmploisDuTempsJEE/prof/list");
+                //System.out.println(getClass().getSimpleName()+" : GOOD");
             } else {
                 out.println("<h1>Erreur!</h1>");
                 System.out.println(getClass().getSimpleName()+" : ERROR");

@@ -9,12 +9,12 @@ import javax.ejb.Stateless;
 /**
  * @author ALBODOR
  */
-@Stateless
-public class ProfesseursManagerImpl implements ProfesseursManager {
+//@Stateless // Uncomment it if you want to work with Database implementation.
+public class ProfesseursManagerLocalImpl implements ProfesseursManager {
     
     List<Professeur> repository;
 
-    public ProfesseursManagerImpl() {
+    public ProfesseursManagerLocalImpl() {
         this.repository = new ArrayList<>();
         repository.add(new Professeur("AD16679", "MARCHICHE", "Fatima", 
                     "marchiche.fatima@gmail.com", "0678771859", Departement.GPEE));
@@ -57,11 +57,6 @@ public class ProfesseursManagerImpl implements ProfesseursManager {
     }
 
     @Override
-    public int cout() {
-        return this.repository.size();
-    }
-
-    @Override
     public boolean modify(Professeur p) {
         // Removing Old Professeur
         Professeur oldProf = find(p.getCin());
@@ -75,6 +70,11 @@ public class ProfesseursManagerImpl implements ProfesseursManager {
         // Saving the new One
         repository.add(p);
         return true;
+    }
+
+    @Override
+    public int count() {
+        return repository.size();
     }
 
 }

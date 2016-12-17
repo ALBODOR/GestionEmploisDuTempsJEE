@@ -1,4 +1,4 @@
-package com.ensakh.projetlibre.presentation.controllers;
+package com.ensakh.projetlibre.presentation.controllers.prof;
 
 import com.ensakh.projetlibre.persistence.ProfesseursManager;
 import java.io.IOException;

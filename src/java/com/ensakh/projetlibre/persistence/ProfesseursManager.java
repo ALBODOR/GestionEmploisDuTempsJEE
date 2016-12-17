@@ -15,6 +15,6 @@ public interface ProfesseursManager {
     
     List<Professeur> findAll();
     
-    int cout();
+    int count();
     
 }

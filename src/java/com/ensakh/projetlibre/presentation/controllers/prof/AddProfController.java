@@ -1,4 +1,4 @@
-package com.ensakh.projetlibre.presentation.controllers;
+package com.ensakh.projetlibre.presentation.controllers.prof;
 
 import com.ensakh.projetlibre.metier.Departement;
 import com.ensakh.projetlibre.metier.Professeur;
@@ -51,11 +51,11 @@ public class AddProfController extends HttpServlet {
             out.println("<html><body>");
             // Persisting Prof
             if(manager.save(prof)) {
-                out.println("<h1>Professeur était bien ajouté!</h1>");
+                resp.sendRedirect("/GestionEmploisDuTempsJEE/prof/list");
             } else {
-                out.println("<h1>Professeur était bien ajouté!</h1>");
+                out.println("<h1>ERROR: Professeur n'était pas ajouté!</h1>");
             }
-            out.println("<p>Nombre des profs: " + manager.cout() + "</p>");
+            out.println("<p>Nombre des profs: " + manager.count() + "</p>");
             out.println("<a href='list'>Liste des professeurs</a>");
             out.println("</body></html>");
         }

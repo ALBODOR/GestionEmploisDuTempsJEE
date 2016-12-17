@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
             dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/admin.jsp");
         } else {
             req.setAttribute("errno", 1);
-            dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+            dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/static/error.jsp");
         }
         
         dispatcher.forward(req, resp);

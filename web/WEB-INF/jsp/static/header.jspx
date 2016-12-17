@@ -4,10 +4,9 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">GestionEmploisDuTemps</a>
+            <a class="navbar-brand" href="/GestionEmploisDuTempsJEE/admin">GestionEmploisDuTemps</a>
           </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="admin">Home</a></li>                    
                 <!-- Professeurs -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="prof/">Professeurs
@@ -41,7 +40,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="/GestionEmploisDuTempsJEE/admin">
                     <span class="glyphicon glyphicon-user"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="/GestionEmploisDuTempsJEE/changepasswd">Changer mot de passe</a></li>
+                      <li><a href="/GestionEmploisDuTempsJEE/changePassword">Changer mot de passe</a></li>
                       <li><a href="/GestionEmploisDuTempsJEE/logout">Se déconnecter</a></li>
                     </ul>
                 </li>
